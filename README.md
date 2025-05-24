@@ -1,4 +1,4 @@
-[![SamSeen Logo](https://img.shields.io/badge/ComfyUI SS_Before_After_Transition-by_SamSeen_Solutions-orange?style=for-the-badge)](https://github.com/MrSamSeen)
+[![SamSeen Logo](https://img.shields.io/badge/ComfyUI_SS_Before_After_Transition-by_SamSeen_Solutions-orange?style=for-the-badge)](https://github.com/MrSamSeen)
 ![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)
 
 # ComfyUI SS Before After Node
@@ -19,13 +19,16 @@ This repository provides two powerful custom nodes for ComfyUI to create stunnin
 ## Node 1: SSBeforeAndAfterVideo
 
 ### Description
+
 Creates before-and-after transition videos using classic fade and wipe effects. Ideal for showcasing transformations, comparisons, or visual storytelling.
 
 ### Supported Transitions
+
 - **Fade**: Smoothly blends from the before image to the after image.
 - **Wipe**: Animated reveal from left, right, top, or bottom, with optional feathered (blurred) edge.
 
 ### Parameters
+
 - **before_image**: The starting image (tensor).
 - **after_image**: The ending image (tensor).
 - **transition_type**: Choose from `fade`, `wipe_from_left`, `wipe_from_top`, `wipe_from_right`, `wipe_from_bottom`.
@@ -39,6 +42,7 @@ Creates before-and-after transition videos using classic fade and wipe effects. 
 - **loop_transition**: If enabled, the video will loop back to the start.
 
 ### How It Works
+
 1. **Resizes** both images to the specified resolution.
 2. **Generates frames** for the hold, transition, and (optionally) loop-back phases.
 3. **Applies the selected transition** (fade or wipe) with feathering.
@@ -51,14 +55,17 @@ Creates before-and-after transition videos using classic fade and wipe effects. 
 ## Node 2: SSBeforeAndAfterVideoWithDepthMap
 
 ### Description
+
 Creates before-and-after transition videos using a depth map to control the transition. This enables advanced effects like revealing the after image from back-to-front, front-to-back, or from the middle outwards, based on scene depth.
 
 ### Supported Transitions
+
 - **back_to_front**: Reveals the after image starting from the farthest (background) regions.
 - **front_to_back**: Reveals the after image starting from the closest (foreground) regions.
 - **middle_out**: Reveals the after image from the center depth outward.
 
 ### Parameters
+
 - **before_image**: The starting image (tensor).
 - **after_image**: The ending image (tensor).
 - **depth_map**: Depth map image (tensor, same size as input images).
@@ -74,6 +81,7 @@ Creates before-and-after transition videos using a depth map to control the tran
 - **easing_method**: Transition easing ("none", "ease-in", "ease-out", "both").
 
 ### How It Works
+
 1. **Resizes** all images to the specified resolution.
 2. **Normalizes the depth map** and creates a mask based on the selected transition type and progress.
 3. **Applies feathering** to the mask for smooth transitions.
@@ -105,6 +113,7 @@ Creates before-and-after transition videos using a depth map to control the tran
 ---
 
 ## Troubleshooting
+
 - **ffmpeg not found**: Make sure ffmpeg is installed and accessible from your system PATH.
 - **Missing dependencies**: Install all required Python packages listed in `requirements.txt`.
 - **Output not appearing**: Check the output directory path and permissions.
@@ -112,14 +121,17 @@ Creates before-and-after transition videos using a depth map to control the tran
 ---
 
 ## License
+
 MIT License
 
 ---
 
 ## Credits
+
 Developed by SamSeen. Inspired by creative visual storytelling needs in ComfyUI.
 
 ---
 
 ## Contribution
+
 Pull requests and suggestions are welcome!
