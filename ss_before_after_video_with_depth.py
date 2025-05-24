@@ -134,25 +134,35 @@ class SSBeforeAndAfterVideoWithDepthMap:
         frames = []
         hold_frames = int(fps * hold_duration)
         transition_frames = int(fps * transition_duration)
-        pbar = ProgressBar(hold_frames + transition_frames + (transition_frames if loop_transition else 0) + hold_frames)
+        total_frames = hold_frames + transition_frames + (hold_frames if loop_transition else hold_frames) + (transition_frames if loop_transition else 0)
+        pbar = ProgressBar(total_frames)
+        # Hold on before image
         for i in range(hold_frames):
             frames.append(before_img.copy())
             pbar.update(1)
+        # Forward transition
         for i in range(transition_frames):
             progress = i / (transition_frames - 1) if transition_frames > 1 else 1.0
             frame = self.create_depth_transition(before_img, after_img, depth_img, progress, transition_type, feather)
             frames.append(frame)
             pbar.update(1)
         if loop_transition:
+            # Hold on after image before looping back
+            for i in range(hold_frames):
+                frames.append(after_img.copy())
+                pbar.update(1)
+            # Reverse transition
             for i in range(transition_frames):
                 progress = i / (transition_frames - 1) if transition_frames > 1 else 1.0
                 frame = self.create_depth_transition(after_img, before_img, depth_img, progress, transition_type, feather)
                 frames.append(frame)
                 pbar.update(1)
+            # Hold on before image again (optional, can be omitted if not needed)
             for i in range(hold_frames):
                 frames.append(before_img.copy())
                 pbar.update(1)
         else:
+            # Hold on after image
             for i in range(hold_frames):
                 frames.append(after_img.copy())
                 pbar.update(1)
