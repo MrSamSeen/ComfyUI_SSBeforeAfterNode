@@ -1,0 +1,16 @@
+[project]
+name = "SSBeforeAfterNode"
+description = "Two powerful custom nodes for ComfyUI to create stunning before-and-after transition videos. These nodes are designed for visual comparisons, transformations, and creative effects, supporting both standard and depth map-based transitions."
+
+version = "1.0.0"
+license = {file = "LICENSE"}
+dependencies = ["torch", "numpy", "Pillow", "opencv-python", "imageio"]
+
+[project.urls]
+Repository = "https://github.com/MrSamSeen/ComfyUI_SSBeforeAfterNode"
+#  Used by Comfy Registry https://comfyregistry.org
+
+[tool.comfy]
+PublisherId = "samseen"
+DisplayName = "ComfyUI_SSBeforeAfterNode"
+Icon = ""
