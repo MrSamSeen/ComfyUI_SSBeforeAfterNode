@@ -2,7 +2,7 @@
 name = "SSBeforeAfterNode"
 description = "Two powerful custom nodes for ComfyUI to create stunning before-and-after transition videos. These nodes are designed for visual comparisons, transformations, and creative effects, supporting both standard and depth map-based transitions."
 
-version = "1.0.0"
+version = "1.0.1"
 license = {file = "LICENSE"}
 dependencies = ["torch", "numpy", "Pillow", "opencv-python", "imageio"]
 
