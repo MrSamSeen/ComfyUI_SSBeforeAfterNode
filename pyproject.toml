@@ -1,5 +1,5 @@
 [project]
-name = "SSBeforeAfterNode"
+name = "ComfyUI_SSBeforeAfterNode"
 description = "Two powerful custom nodes for ComfyUI to create stunning before-and-after transition videos. These nodes are designed for visual comparisons, transformations, and creative effects, supporting both standard and depth map-based transitions."
 
 version = "1.0.1"
@@ -14,3 +14,4 @@ Repository = "https://github.com/MrSamSeen/ComfyUI_SSBeforeAfterNode"
 PublisherId = "samseen"
 DisplayName = "ComfyUI_SSBeforeAfterNode"
 Icon = ""
+Tags = ["img2vid", "animate", "depth-map", "image to video", "video", "image-sequence", "depth-anything"]
