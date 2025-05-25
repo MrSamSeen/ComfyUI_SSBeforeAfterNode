@@ -13,5 +13,5 @@ Repository = "https://github.com/MrSamSeen/ComfyUI_SSBeforeAfterNode"
 [tool.comfy]
 PublisherId = "samseen"
 DisplayName = "ComfyUI_SSBeforeAfterNode"
-Icon = ""
+Icon = "logo.png"
 Tags = ["img2vid", "animate", "depth-map", "image to video", "video", "image-sequence", "depth-anything"]
